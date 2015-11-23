@@ -1,9 +1,6 @@
 $(document).ready(function(){
 
-	$(".shower-manual").click(function(){
-		$(".title").hide();
-		$(".introduction").show();
-	});
+	
 	$(".forward-arrow").click(function(){
 		$(".introduction").hide()
 		$(".section-1").show();
