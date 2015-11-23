@@ -18,11 +18,14 @@ body {
     color: black; }
   .title a:hover {
     color: #0505fa;
-    text-shadow: 0px 0px 50px red; }
+    text-shadow: 0px 0px 50px red;
+    cursor: pointer; }
 
 .introduction {
+  display: none; }
+
+.introduction-paragraph {
   /*display: flex;*/
-  display: none;
   position: relative;
   margin: auto;
   top: 250px;
@@ -38,6 +41,9 @@ p:hover {
 
 .backward-arrow, .forward-arrow {
   position: relative;
+  float: left;
+  margin: 50px;
+  top: 275px;
   width: 30px;
   height: 20px;
   background-size: 30px;
