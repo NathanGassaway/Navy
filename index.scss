@@ -37,9 +37,9 @@ body {
   li {
     text-align: justify;
     font-family: "Courier New", Monospace, sans-serif; 
-    }
-  p:hover {
+    /*p:hover {
     color: #0505fa; 
+      }*/
     }
 
 .backward-arrow, .forward-arrow {
@@ -80,6 +80,7 @@ body {
   h2 {
     display: inline-block;
     width: 10%; 
+    font-family: "Helvetica", sans-serif;
     }
   p {
     display: inline-block;

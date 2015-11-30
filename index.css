@@ -34,10 +34,10 @@ body {
 
 li {
   text-align: justify;
-  font-family: "Courier New", Monospace, sans-serif; }
-
-p:hover {
-  color: #0505fa; }
+  font-family: "Courier New", Monospace, sans-serif;
+  /*p:hover {
+  color: #0505fa; 
+    }*/ }
 
 .backward-arrow, .forward-arrow {
   position: relative;
@@ -74,7 +74,8 @@ p:hover {
     width: 100%; }
   .section-1 h2 {
     display: inline-block;
-    width: 10%; }
+    width: 10%;
+    font-family: "Helvetica", sans-serif; }
   .section-1 p {
     display: inline-block;
     font-family: "Courier New", Monospace, sans-serif; }
