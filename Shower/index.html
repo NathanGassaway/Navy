@@ -1,99 +1,108 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Shower</title>
-	<link rel="stylesheet" type="text/css" href="shower.css">
-	<!-- <link rel="stylesheet" type="text/css" href="reset.min.css"> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
-	</script>
-	<script src="../index.js"></script>
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-</head>
-<body>
-	<div id="introduction">
-		<div id="cover" class="description">
-				<img src="../frontdoc.png">
+	<head>
+		<title>Shower</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="shower.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+		</script>	
+	</head>
+	<body>
+		<div id="introduction">
+			<div id="cover" class="description">
+					<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/frontdoc.png">
+			</div>
+			<div id="intro-paragraph"class="introduction-paragraph">
+					<p>On an American seafaring vessel, seawater may encompass the ship, but fresh water is a scare commodity. To protect the health of crewmembers onboard the ship, water conservation is put into place. The individual's shower time must be limited. Therefore, the Navy Shower was developed to conserve water and benefit each crewmember. Through reduction of waste, the Navy Shower allows the entire community to benefit from each sailor's obligation.
+					</p>
+			</div>
 		</div>
-		<div id="intro-paragraph"class="introduction-paragraph">
-				<p>On an American seafaring vessel, seawater may encompass the ship, but fresh water is a scare commodity. To protect the health of crewmembers onboard the ship, water conservation is put into place. The individual's shower time must be limited. Therefore, the Navy Shower was developed to conserve water and benefit each crewmember. Through reduction of waste, the Navy Shower allows the entire community to benefit from each sailor's obligation.
-				</p>
-		</div>
-	</div>
-		<section class="section-1">
-			<div id="backward" class="backward-arrow"></div>
-			<div id="forward" class="forward-arrow"></div>
-			<div id="first-step" class="description">
-				<h2 class="title">1</h2>				
-				<p class="instruction-text">Prepare shower with soap, shampoo, and a towel.</p>				
-			</div>
-			<div id="first-image" class="description">
-				<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/flickr-soap.jpg">
-			</div>
-			<div id="second-step" class="description">
-			
-				<h2 class="title">2</h2>
-				<p class="instruction-text">After preparing supplies, remove clothing.</p>
-			</div>
-			<div id="second-image" class="description">
-				<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/removing-pants.png">
-			</div>
-			<div id="third-step" class="description">
-			
-				<h2 class="title">3</h2>
-				<p class="instruction-text">Open and step into shower.</p>
-			</div>
-			<div id="third-image" class="description">
-				<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/legs.png">
-			</div>
-			<div id="fourth-step" class="description">
-				<h2 class="title">4</h2>
-				<p class="instruction-text">Turn on shower head. The shock of cold water is very short-lived.</p>
-			</div>
-			<div id="fourth-image" class="description">
-				<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/turn-on-shower.png">
-			</div>
-			<div id="fifth-step" class="description">
-				<h2 class="title">5</h2>
-				<p class="instruction-text">For 15 seconds, coat body with water. Use hands or a washcloth to fully douse body.</p>
-			</div>
-			<div id="fifth-image" class="description">
-				<video id="shower-video" src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/GOPR0300.MP4"></video>
-			</div>
-			<div id="sixth-step" class="description">
-				<h2 class="title">6</h2>
-				<p class="instruction-text">Turn off water and continue to lather skin for 30 seconds.</p>
-			</div>
-			<div id="sixth-image" class="description">
-				<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/sailor-shower-crop.gif">
-			</div>
-			<div id="seventh-step" class="description">
-				<h2 class="title">7</h2>
-				<p class="instruction-text">Rinse off the soap and shampoo with water for 20 more seconds.</p>
-			</div>
-			<div id="seventh-image" class="description">
-				<audio id="shower-audio"><source src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/shower2.mp3" type="audio/mp3"></audio>
-				<div id="shower-timer"></div>
-			</div>
-			<div id="eigth-step" class="description">
-				<h2 class="title">8</h2>
-				<p class="instruction-text">Turn off water and remove excess soap. Step out of shower.</p>
-			</div>
-			<div id="eigth-image" class="description">
-				<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/skin.png">
-			</div>
-			<div id="ninth-step" class="description">
-				<h2 class="title">9</h2>
-				<p class="instruction-text">Grab the towel and dry off skin and remnants of wet hair. Water should be in the shower, not on the rest of the floor.</p>
-			</div>
-			<div id="ninth-image" class="description">
-				<img src="">
-			</div>
-			<div id="tenth-step" class="description">
-				<h2 class="title">10</h2>
-				<p class="instruction-text">Once finished, put on clothing, gather belongings, and leave the bathroom.</p>
-			</div><div id="tenth-image" class="description">
-				<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/floor.png">
-			</div>
-		</section>
-</body>
+			<section class="section-1">
+				<div class="section-1-container">
+					<div class="arrows-container">
+							<div id="backward" class="backward-arrow"></div>
+							<div id="forward" class="forward-arrow"></div>
+					</div>
+					<div id="first-step" class="description">
+						<h2 class="title">1</h2>				
+						<p class="instruction-text">Prepare shower with soap, shampoo, and a towel.</p>				
+					</div>
+					<div id="first-image" class="description">
+						<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/flickr-soap.jpg">
+					</div>
+					<div id="second-step" class="description">
+					
+						<h2 class="title">2</h2>
+						<p class="instruction-text">After preparing supplies, remove clothing.</p>
+					</div>
+					<div id="second-image" class="description">
+						<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/removing-pants.png">
+					</div>
+					<div id="third-step" class="description">
+					
+						<h2 class="title">3</h2>
+						<p class="instruction-text">Open and step into shower.</p>
+					</div>
+					<div id="third-image" class="description">
+						<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/legs.png">
+					</div>
+					<div id="fourth-step" class="description">
+						<h2 class="title">4</h2>
+						<p class="instruction-text">Turn on shower head. The shock of cold water is very short-lived.</p>
+					</div>
+					<div id="fourth-image" class="description">
+						<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/turn-on.png">
+					</div>
+					<div id="fifth-step" class="description">
+						<h2 class="title">5</h2>
+						<p class="instruction-text">For 15 seconds, coat body with water. Use hands or a washcloth to fully douse body.</p>
+					</div>
+					<div id="fifth-image" class="description">
+						<video id="shower-video" src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/GOPR0300.MP4"></video>
+					</div>
+					<div id="sixth-step" class="description">
+						<h2 class="title">6</h2>
+						<p class="instruction-text">Turn off water and continue to lather skin for 30 seconds.</p>
+					</div>
+					<div id="sixth-image" class="description">
+						<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/sailor-shower-crop.gif">
+					</div>
+					<div id="seventh-step" class="description">
+						<h2 class="title">7</h2>
+						<p class="instruction-text">Rinse off the soap and shampoo with water for 20 more seconds.</p>
+					</div>
+					<div id="seventh-image" class="description">
+						<audio id="shower-audio"><source src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/shower2.mp3" type="audio/mp3"></audio>
+						<div id="shower-timer"></div>
+					</div>
+					<div id="eigth-step" class="description">
+						<h2 class="title">8</h2>
+						<p class="instruction-text">Turn off water and remove excess soap. Step out of shower.</p>
+					</div>
+					<div id="eigth-image" class="description">
+						<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/skin.png">
+					</div>
+					<div id="ninth-step" class="description">
+						<h2 class="title">9</h2>
+						<p class="instruction-text">Grab the towel and dry off skin and remnants of wet hair. Water should be in the shower, not on the rest of the floor.</p>
+					</div>
+					<div id="ninth-image" class="description">
+						<video id="towel-video" src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/towel-drying.mov"></video>
+					</div>
+					<div id="tenth-step" class="description">
+						<h2 class="title">10</h2>
+						<p class="instruction-text">Once finished, put on clothing, gather belongings, and leave the bathroom.</p>
+					</div><div id="tenth-image" class="description">
+						<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/floor.png">
+					</div>
+					<div id="backcover" class="description">
+						<img src="https://s3.amazonaws.com/nathan-g-s3/Navpers-Images/backdoc.png">
+					</div>
+				</div>
+			</section>
+		<script src="../slide.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="../bind.js"></script> 
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	</body>
 </html>

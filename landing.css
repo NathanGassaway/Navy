@@ -14,6 +14,17 @@ body {
     font-size: 500%;
     font-weight: 100;
     letter-spacing: 2px; }
+  .title p {
+    text-align: justify;
+    font-family: "Courier New", Monospace, sans-serif;
+    vertical-align: center;
+    margin: auto;
+    padding-bottom: 10%; }
+    .title p a {
+      text-decoration: underline;
+      cursor: pointer; }
+    .title p a:hover {
+      text-decoration: none; }
   .title a {
     text-decoration: none;
     word-spacing: 8px;
@@ -21,5 +32,11 @@ body {
   .title a:hover {
     text-decoration: underline;
     cursor: pointer; }
+
+/*@media screen and (max-width : 480px){
+  .title{
+    
+  }
+}*/
 
 /*# sourceMappingURL=landing.css.map */

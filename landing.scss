@@ -16,6 +16,20 @@ body {
     font-weight: 100;
     letter-spacing: 2px; 
     }
+    p{
+    text-align: justify;
+    font-family: "Courier New", Monospace, sans-serif;
+    vertical-align: center; 
+    margin: auto;
+    padding-bottom: 10%;
+    a{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+    }
   a {
     text-decoration: none;
     word-spacing: 8px;
@@ -23,7 +37,12 @@ body {
     }
   a:hover {
     text-decoration: underline;
-    font-family: "Courier New";
     cursor: pointer;
     }
   }
+  /*@media screen and (max-width : 480px){
+    .title{
+      
+    }
+  }*/
+
