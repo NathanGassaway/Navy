@@ -16,6 +16,10 @@ $(document).ready(function(){
     $(".forward-arrow").hide();
     $(".backward-arrow").hide();
   }
+  function showArrows(){
+   $(".forward-arrow").show();
+    $(".backward-arrow").show(); 
+  }
 //clear document img
   function clearcoverPage(){
     $("#cover").hide();
@@ -31,18 +35,16 @@ $(document).ready(function(){
   function nextVideo(){
     hideVideo = window.setInterval(function(){
       counter = 11;
-      $(".forward-arrow").show();
-      $(".backward-arrow").show();
+      showArrows();
       $(".description").eq(10).hide();
       $(".description").eq(11).show();
       $('#shower-video').trigger("pause");
-      }, 1000);
+      }, 15000);
   }
   //transition audioscene
   function nextAudio(){
     counter = 15;
-    $(".forward-arrow").show();
-    $(".backward-arrow").show();
+    showArrows();
     $(".description").eq(14).hide();
     $(".description").eq(15).show();
     $('#shower-audio').trigger("pause");
@@ -89,7 +91,7 @@ function clearShowerVideo(){
       $('#shower-audio').trigger("play");
       $("body").addClass("blue");
       clearArrows();
-      
+
       function startTimer(duration, display){
           var timer = duration, seconds;
           myTimer = setInterval(function() {
@@ -158,6 +160,7 @@ function clearShowerVideo(){
       if(counter > 9 && counter < 15){
       backward.onclick = function(e){
         e.preventDefault();
+        // $(".backward-arrow").toggleClass("forward-arrow");
         }
       }
     }
@@ -221,6 +224,5 @@ function clearShowerVideo(){
   closeDoc.onclick = function(){
     window.location.href = "http://www.navpers.us";
   }
-
 
 });
