@@ -123,5 +123,25 @@ video {
   color: white; }
 
 /*All media for changing to phone and tablet*/
+@media screen and (max-width: 480px) {
+  .backward-arrow {
+    display: none; }
+
+  .forward-arrow {
+    display: none; }
+
+  #cover, #backcover {
+    width: 75%; }
+    #cover img, #backcover img {
+      width: 100%; }
+
+  .description h2 {
+    width: 100%;
+    font-size: 54px;
+    margin: 0;
+    text-align: center; }
+  .description p {
+    display: block;
+    width: 100%; } }
 
 /*# sourceMappingURL=shower.css.map */

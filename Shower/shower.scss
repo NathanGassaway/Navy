@@ -141,3 +141,29 @@ video{
 }
 
 /*All media for changing to phone and tablet*/
+@media screen and (max-width : 480px){
+  .backward-arrow{
+    display: none;
+  }
+  .forward-arrow{
+    display: none;
+  }
+  #cover{
+    width: 75%;
+    img{
+      width: 100%;
+    }
+  }
+  .description{
+    h2{
+      width: 100%;
+      font-size: 54px;
+      margin: 0;
+      text-align: center;
+    }
+    p{
+      display: block;
+      width: 100%;
+    }
+  }
+}
