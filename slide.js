@@ -1,12 +1,11 @@
 $(document).ready(function(){
-  
   var forward = document.getElementById("forward");
   var backward = document.getElementById("backward");
   var openDoc = document.getElementById("cover");
   var closeDoc = document.getElementById("backcover");
   var openIntro = document.getElementById("intro-paragraph");
   var countdown = document.getElementById("seventh-image");
-  var hideVideo; 
+  var hideVideo;
   var myTimer;
   var hideAudioVideo;
   var counter = 0;
@@ -16,7 +15,7 @@ $(document).ready(function(){
   function clearArrows(){
     $(".forward-arrow").hide();
     $(".backward-arrow").hide();
-  };
+  }
 //clear document img
   function clearcoverPage(){
     $("#cover").hide();
@@ -37,7 +36,7 @@ $(document).ready(function(){
       $(".description").eq(10).hide();
       $(".description").eq(11).show();
       $('#shower-video').trigger("pause");
-      }, 15000);
+      }, 1000);
   }
   //transition audioscene
   function nextAudio(){
@@ -55,7 +54,7 @@ $(document).ready(function(){
       $(".description").eq(18).hide();
       $(".description").eq(19).show();
       $('#towel-video').trigger("pause");
-      }, 4000);
+      }, 10000);
   }
 
   //interval clearing!
@@ -72,20 +71,11 @@ function clearShowerVideo(){
     clearInterval(hideAudioVideo);
   }
 
-
-  function forward(){
-    counter++;
-    if(counter < $(".description").length) $(".description").hide();
-    $('.description').eq(counter).show();
-    console.log(counter);
-  }
-
   //shower video trigger
   function showerVideo(){
     if(counter === 10){
       $('#shower-video').trigger("play");
-      $(".forward-arrow").hide();
-      $(".backward-arrow").hide();
+      clearArrows();
       nextVideo();
     } else {
         $('#shower-video').trigger("pause");
@@ -97,9 +87,9 @@ function clearShowerVideo(){
   function showerAudio(){
     if (counter === 14) {
       $('#shower-audio').trigger("play");
-      $(".forward-arrow").hide();
-      $(".backward-arrow").hide();
       $("body").addClass("blue");
+      clearArrows();
+      
       function startTimer(duration, display){
           var timer = duration, seconds;
           myTimer = setInterval(function() {
@@ -109,23 +99,29 @@ function clearShowerVideo(){
 
             display.text(seconds);
 
+            if(timer < 10) {
+              $("body").addClass("grey");
+            }
             if(--timer < 0) {
-              timer = 00,
+              timer = 0;
               clearInterval(myTimer);
               nextAudio();
               $("body").removeClass("blue");
+              $("body").removeClass("white");
+              $("body").removeClass("grey");
             }
           }, 1000);
       	}
         
         display = $('#shower-timer');
           startTimer(20, display);
-         //  $("#shower-timer").mouseover(function(){
-	        // }); 
+          $("#shower-timer").mouseover(function(){
+            $("body").toggleClass("white");
+	        }); 
 
     } else{
       $('#shower-audio').trigger("pause");
-      clearShowerAudio()
+      clearShowerAudio();
       $("body").removeClass("blue");
     };
   };
@@ -142,10 +138,6 @@ function clearShowerVideo(){
     }
   };
 
-  // to change background color
-  function colorChange(){
-    $("body").addClass("blue");
-  }
 //don't overcounter RENAME
 
   function stopOvertrace(){
@@ -156,65 +148,27 @@ function clearShowerVideo(){
   }
 //don't undercount RENAME
   function stopRetrace(){
-    if(counter < 0){
-        counter = 0;
+    if(counter < 1){
+        counter = 2;
+        $(".description").eq(1).show();
       }
   }
 
   function preventBackwards(){
-    if(counter > 10 && counter < 15){
-      $(backward).hide();
+      if(counter > 9 && counter < 15){
+      backward.onclick = function(e){
+        e.preventDefault();
+        }
+      }
     }
-  }
-  // --> this doesn't even need to exist really. KEYDOWN
-  // $(document).keydown(function(e){
-  //       //forward
-  //     if (e.keyCode === 39) {
-
-  //       counter++;
-  //     if(counter < $(".description").length) $(".description").hide();
-  //     $('.description').eq(counter).show();
-  //     console.log(counter);
-        
-  //     clearintro();
-
-  //     showerVideo();
-
-  //     showerAudio();
-
-  //     towelVideo();
-
-  //     stopOvertrace();
-
-  //     }
-  //          //backwards
-  //     if (e.keyCode === 37) {
-  //       counter--;
-  //     if(counter < $(".description").length) $(".description").hide();
-  //     $('.description').eq(counter).show();
-
-  //     showerVideo();
-
-  //     showerAudio();
-
-  //     towelVideo();
-
-  //     stopRetrace();
-
-  //     }
-  // });
 
   //forwards
 
   forward.onclick = function(e){
     counter++;
-
+    console.log(counter);
     if(counter < $(".description").length) $(".description").hide();
     $('.description').eq(counter).show();
-
-    if(counter > 10 && counter < 15){
-      e.preventDefault(); //essentially prevent backwards
-    }
 
     showerVideo();
 
@@ -222,35 +176,32 @@ function clearShowerVideo(){
 
     towelVideo();
 
-    // preventBackwards(); for water phase
+    preventBackwards(); 
 
     stopOvertrace();
   };
 
   //backwards
 
-  backward.onclick = function(e){
-      counter--;
-      console.log(counter);
-    if(counter < $(".description").length) $(".description").hide();
-    $('.description').eq(counter).show();
+    backward.onclick = function(e){
+        counter--;
+        console.log(counter);
+      if(counter < $(".description").length) $(".description").hide();
+      $('.description').eq(counter).show();
 
-    if(counter > 10 && counter < 15){
-      e.preventDefault();
+      showerVideo();
+
+      showerAudio();
+
+      towelVideo();
+
+      preventBackwards();
+
+      stopOvertrace();
+
+      stopRetrace();
+      
     }
-
-    showerVideo();
-
-    showerAudio();
-
-    towelVideo();
-
-    stopOvertrace();
-
-    stopRetrace();
-    
-  };
-
   //mobile events should go here
 
   //remove intro
@@ -264,12 +215,12 @@ function clearShowerVideo(){
     if(counter < $(".description").length) $(".description").hide();
     $('.description').eq(counter).show();
     clearintro();
+    console.log(counter)
   };
 
   closeDoc.onclick = function(){
     window.location.href = "http://www.navpers.us";
   }
-
 
 
 });

@@ -10,8 +10,11 @@
 .blue {
   background-color: #0505fa; }
 
-.gray {
-  background-color: gray; }
+.grey {
+  background-color: #f0f0f0; }
+
+.white {
+  background-color: white; }
 
 body {
   font-family: "Helvetica", sans-serif;
@@ -94,8 +97,8 @@ video {
   position: fixed;
   top: 50%;
   left: 50%;
-  min-height: 100%;
-  min-width: 100%;
+  min-height: 200%;
+  min-width: 200%;
   width: auto;
   height: auto;
   z-index: 100;
@@ -116,7 +119,7 @@ video {
   margin: auto;
   width: 50%;
   text-align: center;
-  font-size: 54px;
+  font-size: 84px;
   color: white; }
 
 /*All media for changing to phone and tablet*/
