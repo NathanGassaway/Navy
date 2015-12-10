@@ -33,10 +33,10 @@ body {
     text-decoration: underline;
     cursor: pointer; }
 
-/*@media screen and (max-width : 480px){
-  .title{
-    
-  }
-}*/
+@media screen and (max-width: 600px) {
+  .title {
+    width: 85%; }
+    .title h2 {
+      font-size: 300%; } }
 
 /*# sourceMappingURL=landing.css.map */

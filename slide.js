@@ -10,32 +10,38 @@ $(document).ready(function(){
   var hideAudioVideo;
   var counter = 0;
 
+  //hiding first images
   $("cover", "#first-image", "#second-step").hide();
-
+  //jquery removing left click
+  $('img').bind('contextmenu', function(e) {
+    return false;
+  }); 
+  // hiding arrows
   function clearArrows(){
-    $(".forward-arrow").hide();
-    $(".backward-arrow").hide();
+    $(forward).hide();
+    $(backward).hide();
   }
+  //showing arrows
   function showArrows(){
-   $(".forward-arrow").show();
-    $(".backward-arrow").show(); 
+    $(forward).show();
+    $(backward).show();
   }
-//clear document img
+  //clear document img
   function clearcoverPage(){
     $("#cover").hide();
     $(".introduction-paragraph").show();
   }
-//clear introduction paragraph
+  //clear introduction paragraph
   function clearintro(){
     $(".introduction-paragraph").hide();
     $("#introduction").hide();
     $(".section-1").show();
   }
-//transition video scene
+  //transition video scene
   function nextVideo(){
     hideVideo = window.setInterval(function(){
       counter = 11;
-      showArrows();
+      $(forward).show();
       $(".description").eq(10).hide();
       $(".description").eq(11).show();
       $('#shower-video').trigger("pause");
@@ -44,24 +50,22 @@ $(document).ready(function(){
   //transition audioscene
   function nextAudio(){
     counter = 15;
-    showArrows();
+    $(forward).show();
     $(".description").eq(14).hide();
     $(".description").eq(15).show();
     $('#shower-audio').trigger("pause");
   }
-//transition towel scene
+  //transition towel scene
   function nextVideoAudio(){
     hideAudioVideo = window.setInterval(function(){
       counter = 19;
       $(".description").eq(18).hide();
       $(".description").eq(19).show();
       $('#towel-video').trigger("pause");
-      }, 10000);
+      }, 6000);
   }
-
   //interval clearing!
-
-function clearShowerVideo(){
+  function clearShowerVideo(){
     clearInterval(hideVideo);
   }
 
@@ -111,26 +115,26 @@ function clearShowerVideo(){
               $("body").removeClass("blue");
               $("body").removeClass("white");
               $("body").removeClass("grey");
+              counter = 15;
             }
           }, 1000);
-      	}
-        
+      }
         display = $('#shower-timer');
           startTimer(20, display);
           $("#shower-timer").mouseover(function(){
             $("body").toggleClass("white");
-	        }); 
+	        });
 
     } else{
       $('#shower-audio').trigger("pause");
       clearShowerAudio();
       $("body").removeClass("blue");
-    };
-  };
+    }
+  }
 // towel video function
   function towelVideo(){
     if(counter === 18){
-      counter = 19
+      counter = 19;
       $("#towel-video").trigger("play");
       nextVideoAudio();
     }
@@ -138,7 +142,7 @@ function clearShowerVideo(){
       $("#towel-video").trigger("pause");
       clearTowelVideo();
     }
-  };
+  }
 
 //don't overcounter RENAME
 
@@ -148,30 +152,32 @@ function clearShowerVideo(){
         clearArrows();
       }
   }
+
 //don't undercount RENAME
+
   function stopRetrace(){
-    if(counter < 1){
-        counter = 2;
-        $(".description").eq(1).show();
+    if(counter < 2){
+        $(".backward-arrow").hide();
+      } else{
+        $(".backward-arrow").show();
       }
   }
 
   function preventBackwards(){
-      if(counter > 9 && counter < 15){
-      backward.onclick = function(e){
-        e.preventDefault();
-        // $(".backward-arrow").toggleClass("forward-arrow");
-        }
+     if(counter === 11 || counter === 15){
+       $(backward).hide(); 
       }
-    }
-
+}
   //forwards
+
 
   forward.onclick = function(e){
     counter++;
     console.log(counter);
     if(counter < $(".description").length) $(".description").hide();
     $('.description').eq(counter).show();
+    
+    stopRetrace();
 
     showerVideo();
 
@@ -179,7 +185,7 @@ function clearShowerVideo(){
 
     towelVideo();
 
-    preventBackwards(); 
+    preventBackwards();
 
     stopOvertrace();
   };
@@ -192,6 +198,8 @@ function clearShowerVideo(){
       if(counter < $(".description").length) $(".description").hide();
       $('.description').eq(counter).show();
 
+      stopRetrace();
+
       showerVideo();
 
       showerAudio();
@@ -201,25 +209,28 @@ function clearShowerVideo(){
       preventBackwards();
 
       stopOvertrace();
-
-      stopRetrace();
-      
     }
   //mobile events should go here
 
-  //remove intro
+  //remove intro cover
 
   openDoc.onclick = function(){
     clearcoverPage();
   };
 
+//remove intro paragraph
+
   openIntro.onclick = function(){
     counter++;
     if(counter < $(".description").length) $(".description").hide();
     $('.description').eq(counter).show();
+
     clearintro();
-    console.log(counter)
+
+    stopRetrace();
   };
+
+// link to source
 
   closeDoc.onclick = function(){
     window.location.href = "http://www.navpers.us";

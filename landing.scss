@@ -40,9 +40,14 @@ body {
     cursor: pointer;
     }
   }
-  /*@media screen and (max-width : 480px){
-    .title{
+@media screen and (max-width : 600px){
+  .title{  
+    width: 85%;
+    h2{
+      font-size: 300%;
+    }
+    p{
       
     }
-  }*/
-
+  }
+}
