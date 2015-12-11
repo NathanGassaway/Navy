@@ -3,6 +3,7 @@ $(document).ready(function(){
   var backward = document.getElementById("backward");
   var openDoc = document.getElementById("cover");
   var closeDoc = document.getElementById("backcover");
+  var openLanding = document.getElementById("summary-paragraph");
   var openIntro = document.getElementById("intro-paragraph");
   var countdown = document.getElementById("seventh-image");
   var hideVideo;
@@ -131,7 +132,7 @@ $(document).ready(function(){
       $("body").removeClass("blue");
     }
   }
-// towel video function
+  // towel video function
   function towelVideo(){
     if(counter === 18){
       counter = 19;
@@ -144,16 +145,15 @@ $(document).ready(function(){
     }
   }
 
-//don't overcounter RENAME
+  //don't overcounter RENAME
 
   function stopOvertrace(){
     if(counter > 20){
-        counter = 0;
         clearArrows();
       }
   }
 
-//don't undercount RENAME
+  //don't undercount RENAME
 
   function stopRetrace(){
     if(counter < 2){
@@ -218,7 +218,7 @@ $(document).ready(function(){
     clearcoverPage();
   };
 
-//remove intro paragraph
+  //remove intro paragraph
 
   openIntro.onclick = function(){
     counter++;
@@ -230,10 +230,27 @@ $(document).ready(function(){
     stopRetrace();
   };
 
-// link to source
-
   closeDoc.onclick = function(){
+    counter++;
+    if(counter < $(".description").length) $(".description").hide();
+    $('.description').eq(counter).show();
+  }
+
+  // relink to source
+  openLanding.onclick = function(){
     window.location.href = "http://www.navpers.us";
   }
+
+  //very begnning of SWIPE
+
+  $(function(){
+    $("body").swipe({
+      swipe:function(event, directions){
+        counter++;
+        if(counter < $(".description").length) $(".description").hide();
+        $('.description').eq(counter).show();
+      }
+    });
+  });
 
 });

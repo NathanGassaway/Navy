@@ -171,5 +171,12 @@ video {
     display: block;
     width: 100%;
     text-align: center; } }
+#summary-paragraph {
+  text-align: justify;
+  font-family: "Courier New", Monospace, sans-serif;
+  margin: auto; }
+
+#summary-paragraph:hover {
+  color: #0505fa; }
 
 /*# sourceMappingURL=shower.css.map */
