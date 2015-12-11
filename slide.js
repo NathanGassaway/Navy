@@ -46,7 +46,7 @@ $(document).ready(function(){
       $(".description").eq(10).hide();
       $(".description").eq(11).show();
       $('#shower-video').trigger("pause");
-      }, 15000);
+      }, 1000);
   }
   //transition audioscene
   function nextAudio(){
@@ -63,7 +63,7 @@ $(document).ready(function(){
       $(".description").eq(18).hide();
       $(".description").eq(19).show();
       $('#towel-video').trigger("pause");
-      }, 6000);
+      }, 1000);
   }
   //interval clearing!
   function clearShowerVideo(){
@@ -121,7 +121,7 @@ $(document).ready(function(){
           }, 1000);
       }
         display = $('#shower-timer');
-          startTimer(20, display);
+          startTimer(2, display);
           $("#shower-timer").mouseover(function(){
             $("body").toggleClass("white");
 	        });
@@ -132,6 +132,7 @@ $(document).ready(function(){
       $("body").removeClass("blue");
     }
   }
+
   // towel video function
   function towelVideo(){
     if(counter === 18){
@@ -146,7 +147,6 @@ $(document).ready(function(){
   }
 
   //don't overcounter RENAME
-
   function stopOvertrace(){
     if(counter > 20){
         clearArrows();
@@ -154,7 +154,6 @@ $(document).ready(function(){
   }
 
   //don't undercount RENAME
-
   function stopRetrace(){
     if(counter < 2){
         $(".backward-arrow").hide();
@@ -168,9 +167,8 @@ $(document).ready(function(){
        $(backward).hide(); 
       }
 }
+
   //forwards
-
-
   forward.onclick = function(e){
     counter++;
     console.log(counter);
