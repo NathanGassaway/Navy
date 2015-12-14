@@ -46,7 +46,7 @@ $(document).ready(function(){
       $(".description").eq(10).hide();
       $(".description").eq(11).show();
       $('#shower-video').trigger("pause");
-      }, 1000);
+      }, 15000);
   }
   //transition audioscene
   function nextAudio(){
@@ -63,7 +63,7 @@ $(document).ready(function(){
       $(".description").eq(18).hide();
       $(".description").eq(19).show();
       $('#towel-video').trigger("pause");
-      }, 1000);
+      }, 6000);
   }
   //interval clearing!
   function clearShowerVideo(){
@@ -121,7 +121,7 @@ $(document).ready(function(){
           }, 1000);
       }
         display = $('#shower-timer');
-          startTimer(2, display);
+          startTimer(20, display);
           $("#shower-timer").mouseover(function(){
             $("body").toggleClass("white");
 	        });
@@ -156,14 +156,14 @@ $(document).ready(function(){
   //don't undercount RENAME
   function stopRetrace(){
     if(counter < 2){
-        $(".backward-arrow").hide();
+        $(backward).hide();
       } else{
-        $(".backward-arrow").show();
+        $(backward).show();
       }
   }
 
   function preventBackwards(){
-     if(counter === 11 || counter === 15){
+     if(counter === 11 || counter === 15 || counter === 19){
        $(backward).hide(); 
       }
 }
@@ -171,7 +171,6 @@ $(document).ready(function(){
   //forwards
   forward.onclick = function(e){
     counter++;
-    console.log(counter);
     if(counter < $(".description").length) $(".description").hide();
     $('.description').eq(counter).show();
     
@@ -192,7 +191,6 @@ $(document).ready(function(){
 
     backward.onclick = function(e){
         counter--;
-        console.log(counter);
       if(counter < $(".description").length) $(".description").hide();
       $('.description').eq(counter).show();
 
@@ -242,11 +240,27 @@ $(document).ready(function(){
   //very begnning of SWIPE
 
   $(function(){
-    $("body").swipe({
-      swipe:function(event, directions){
-        counter++;
-        if(counter < $(".description").length) $(".description").hide();
-        $('.description').eq(counter).show();
+    $(".section-1").swipe({
+
+      swipe:function(event, direction, distance, duration, fingerCount){
+        if(direction === "left"){
+          counter++;
+          if(counter < $(".description").length) $(".description").hide();
+          $('.description').eq(counter).show();
+          console.log(counter);
+        }
+        else{
+          counter--;
+          if(counter < $(".description").length) $(".description").hide();
+          $('.description').eq(counter).show();
+
+          console.log(counter);
+
+          if(counter < 2){
+            counter = 2;
+            console.log(counter);
+          }
+        }
       }
     });
   });
